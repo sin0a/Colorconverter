@@ -1,4 +1,3 @@
-
 // Function for input validation
 export function validateInput(event){
   var valid = event.target.value;
@@ -33,9 +32,9 @@ export function validateInput(event){
       return true;
   }
 }
-/* Function for undefined objects
-  if a value is undefined its set to zero, you cant
-  convert an undefined variable
+/* Function for illegal numvers
+  if a value is illegal its set to zero
+  to avoid exception
 */
 export function validateObjects(rgba, hsl){
   if (isNaN(rgba.R)){
@@ -62,9 +61,12 @@ export function validateObjects(rgba, hsl){
   return [rgba,hsl];
 }
 // Single method for all events. Identefies the source from input name=""
+// then binds the new value to the object and returns it with a trigger
+// for later use
 export function trigger(event, rgba, hsl){
   var trigger;
-  var array = [];
+  // array
+  var array = []
   // Single method for all objects defined by inputName
   switch(event.target.name){
     case "R":
@@ -104,6 +106,7 @@ export function trigger(event, rgba, hsl){
   array = [trigger, rgba, hsl];
   return array;
 }
+// selects a random donger from the list and returns it.
 export function generateDongers(){
   var dongerList = ['⊂(▀¯▀⊂)', 'ᕙ(˵ ಠ ਊ ಠ ˵)ᕗ','(ノ͡° ͜ʖ ͡°)ノ','[̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]', '╰༼ ❛ ʖ̫ ❛ ༽╯', '( ͡° ͜ʖ ͡°) ', 'ლ(▀̿̿Ĺ̯̿̿▀̿ლ)', '(  ͡°  ͜ʖ  ͡°)', '(งಠ_ಠ)ง', '༼つ ◕_◕ ༽つ', 'ლ(ಥ Д ಥ )ლ'];
   var donger = Math.floor((Math.random() * dongerList.length-1) + 1);

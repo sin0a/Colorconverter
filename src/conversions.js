@@ -34,7 +34,7 @@ export function rgbToHSL(r,g,b, hsl) {
 	var max = Math.max(r, g, b);
 	// calculate delta
 	var delta = max - min;
-	// if min and max are the same, there is no saturdation
+	// If min and max are the same, there is no saturdation
 	if (max === min) {
 		hsl.H = 0;
 		// If Red is max, then Hue = (G-B)/delta
@@ -88,10 +88,13 @@ export function hslToRGB(h, s, l, rgba){
 	if(s === 0){
 		r = g = b = l;
 	}else{
-
+		/* function for the three color channels.
+			If hue is smaller than zero: add one. If its lager than one: subtract 1
+		*/
 		var hue2rgb = function hue2rgb(p, q, t){
 			if(t < 0) t += 1;
 			if(t > 1) t -= 1;
+			// The three tests as described in the article:
 			if(t < 1/6) return p + (q - p) * 6 * t;
 			if(t < 1/2) return q;
 			if(t < 2/3) return p + (q - p) * (2/3 - t) * 6;
@@ -104,6 +107,7 @@ export function hslToRGB(h, s, l, rgba){
 		g = hue2rgb(p, q, h);
 		b = hue2rgb(p, q, h - 1/3);
 	}
+	// As the function returns a number between 0-1: multiply by 255 and round the number
 	rgba.R = Math.round(r*255);
 	rgba.G = Math.round(g*255);
 	rgba.B = Math.round(b*255);
@@ -112,8 +116,10 @@ export function hslToRGB(h, s, l, rgba){
 }
 // Remove a character from a variable
 export function sliceSign(value){
+	// First: check if the variable is null to avoid undefined exception
 	if(value === null){
 		return null;
+	// if the varable is not null, simply subtract the last character
  	} else{
 		value.toString().substring(0,value.length-1)
 		return value;
@@ -121,8 +127,10 @@ export function sliceSign(value){
  }
 // Check if the input has a sign
 export function checkSign(value){
+	// First: check if the variable is null to avoid undefined exception
  if(value === null){
 	 return false;
+// Go through each character in the string. if either matches the signs return true.
  }else{
  	for(var i = 0; i > value.toString().length; i++){
 	 if(i === "%" || i ==="#" || i==="°"){
