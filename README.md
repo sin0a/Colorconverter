@@ -1,7 +1,8 @@
 # Colorconverter
 
 ## Installation
-Copy the project and run 'npm start' in your directory
+Copy the project and run 'npm install' in your directory
+'npm start' to start.
 
 ### Files
 App.js - main
