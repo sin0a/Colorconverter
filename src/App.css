@@ -1,0 +1,87 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 100px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.9em;
+}
+.App-intro {
+  font-size: large;
+}
+.App-main {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  flex-wrap: wrap;
+}
+.App-donger {
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 34%;
+  color: white;
+}
+.labelItem {
+  margin-top: 15px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  width: 50%;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 5px;
+  display: inline-block;
+  box-sizing: border-box;
+  width: match-parent;
+  text-align: left;
+}
+.form {
+}
+.App-color {
+  width: 100px;
+  height: 100px;
+  margin-top: 50px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.input-RGB {
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 21%;
+  padding-left: 10px;
+  height: 20px;
+  -webkit-border-radius: 5px;
+}
+.input-HSL {
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 29%;
+  padding-left: 10px;
+  height: 20px;
+  -webkit-border-radius: 5px;
+}
+.input-HEX {
+  margin-left: 10px;
+  padding-left: 10px;
+  margin-top: 10px;
+  width: 93%;
+  height: 20px;
+  -webkit-border-radius: 5px;
+}
+
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
