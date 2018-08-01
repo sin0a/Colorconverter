@@ -2,6 +2,7 @@
 
 ## Installation
 Copy the project and run 'npm install' in your directory
+
 'npm start' to start.
 
 ### Files
